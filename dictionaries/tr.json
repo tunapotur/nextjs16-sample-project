@@ -1,0 +1,25 @@
+{
+  "site": {
+    "title": "Kolay Başlangıç",
+    "description": "Bu site Türkçe ana sayfa örneğidir."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "videos": "Videolar",
+    "archive": "Arşiv",
+    "tags": "Etiketler",
+    "about": "Hakkımda"
+  },
+  "footer": {
+    "recentPostsTitle": "Son Yazılar",
+    "menuTitle": "Menü",
+    "pagesTitle": "Sayfalar",
+    "pages": {
+      "about": "Hakkımda",
+      "contact": "İletişim",
+      "elements": "Bileşenler"
+    },
+    "copyrightPrefix": "Tüm hakları saklıdır.",
+    "publishedWith": "Yayın altyapısı"
+  }
+}
