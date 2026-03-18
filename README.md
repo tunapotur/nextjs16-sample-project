@@ -1,5 +1,8 @@
 ## Getting Started
 
+https://www.youtube.com/watch?v=SgTWxqg2kJ0&t=2893s
+//33:39'inci dakikada kaldım
+
 First, run the development server:
 
 ```bash
