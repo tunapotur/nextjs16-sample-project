@@ -14,7 +14,7 @@ export default async function Home({ params }: HomePageProps) {
   const { locale } = await params;
   const dict = await getDictionary(locale);
 
-  //33:39'inci dakikada kaldım
+  //48'inci dakikada kaldım
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-4">
       <h1 className="text-3xl font-bold">{dict.site.title}</h1>
