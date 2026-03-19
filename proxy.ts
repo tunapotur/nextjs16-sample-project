@@ -18,14 +18,14 @@ export function proxy(request: NextRequest) {
   }
 
   const hasLocale = i18n.locales.some(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
   if (!hasLocale) {
     const locale = i18n.defaultLocale;
 
     return NextResponse.redirect(
-      new URL(`/${locale}${pathname === "/" ? "" : pathname}`, request.url)
+      new URL(`/${locale}${pathname === "/" ? "" : pathname}`, request.url),
     );
   }
   return NextResponse.next();
@@ -33,18 +33,18 @@ export function proxy(request: NextRequest) {
 
 /* Bu kod, Next.js middleware’in:
   Statik dosyalarda
-  _next internal route’larında çalışmasını engeller,
+  _next internal route çalışmasını engeller,
   sadece gerçek kullanıcı isteklerinde devreye sokar.
 
   ÖRNEK OLARAK;
-  ✅ Middleware ÇALIŞIR
+  ✅ Middleware Çalışır
   /
   /login
   /dashboard
   /api/user
   /profile/settings
 
-  ❌ Middleware ÇALIŞMAZ
+  ❌ Middleware Çalışmaz
   /_next/static/...
   /_next/image/...
   /favicon.ico
