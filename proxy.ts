@@ -28,6 +28,7 @@ export function proxy(request: NextRequest) {
       new URL(`/${locale}${pathname === "/" ? "" : pathname}`, request.url),
     );
   }
+
   return NextResponse.next();
 }
 
