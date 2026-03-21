@@ -14,10 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-type Dict = Awaited<
-  ReturnType<typeof import("@/lib/dictionaries").getDictionary>
->;
+import { Dict } from "@/constants/types";
+import MobileMenu from "./MobileMenu";
 
 interface SiteHeaderProps {
   locale: Locale;
@@ -61,7 +59,7 @@ const SiteHeader = ({ dict, locale }: SiteHeaderProps) => {
     <header className="border-b bg-mycolor1 text-mycolor2">
       <div className="mx-auto flex items-center justify-between px-4 lg:px-8 py-6">
         <div>
-          <Link href={buildHref("")} className="text-2xl font-semibold">
+          <Link href={buildHref("")} className="text-2xl font-semibold ">
             Logo
           </Link>
         </div>
@@ -102,7 +100,7 @@ const SiteHeader = ({ dict, locale }: SiteHeaderProps) => {
           </Select>
 
           <div className="flex lg:hidden">
-            <MenuIcon />
+            <MobileMenu dict={dict} locale={locale} />
           </div>
         </div>
       </div>

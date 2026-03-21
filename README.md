@@ -8,9 +8,9 @@ https://github.com/efegorkemumit/blog-multi-lang-nextjs16
 14:05 Dil Ayarları (i18n) \
 30:03 Dark Mode / Light Mode \
 33:26 Header Tasarımı \
-*01:03:22 Mobile Menu \ https://youtu.be/SgTWxqg2kJ0?si=eFxQ5LZ-_REqDOZM&t=3802
+\*01:03:22 Mobile Menu \ https://youtu.be/SgTWxqg2kJ0?si=eFxQ5LZ-_REqDOZM&t=3802
 01:07:49 Site Footer\
-01:22:35 Hero Design \
+01:22:35 Hero Design \ https://youtu.be/SgTWxqg2kJ0?si=FHdTaluvdVNOgtt3&t=4955
 01:30:01 Blog Design \
 01:37:35 Supabase Bağlantı Ayarları ve Modeller \
 01:50:47 Login Design & Admin Auth \

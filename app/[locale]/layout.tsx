@@ -2,7 +2,7 @@ import { i18n, Locale } from "@/i18n";
 import { getDictionary } from "@/lib/dictionaries";
 import React from "react";
 import SiteHeader from "@/components/layout/SiteHeader";
-import SideFooter from "@/components/layout/SiteFooter";
+import SiteFooter from "@/components/layout/SiteFooter";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -21,7 +21,7 @@ const LocaleLayout = async ({ children, params }: LayoutProps) => {
     <div>
       <SiteHeader dict={dict} locale={locale} />
       {children}
-      <SideFooter />
+      <SiteFooter dict={dict} locale={locale} />
     </div>
   );
 };
