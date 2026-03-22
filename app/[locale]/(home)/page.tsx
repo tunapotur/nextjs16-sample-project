@@ -4,11 +4,11 @@ import { ModeToggle } from "@/components/layout/ModeToggle";
 import { Button } from "@/components/ui/button";
 import { i18n, Locale } from "@/i18n";
 import { getDictionary } from "@/lib/dictionaries";
-// import { supabaseAdmin } from "@/lib/supabase-admin";
+import { supabaseAdmin } from "@/lib/supabase-admin";
 import Image from "next/image";
 
 interface HomePageProps {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: Locale }>
 }
 type RawPost = {
   id: string;
@@ -26,22 +26,22 @@ type RawPost = {
 };
 
 export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ locale }));
+  return i18n.locales.map((locale) => ({ locale }))
 }
 
 export default async function Home({ params }: HomePageProps) {
+
   const { locale } = await params;
 
   const dict = await getDictionary(locale);
 
-  /*
   const { data } = await supabaseAdmin
     .from("about_page")
     .select("*")
     .eq("locale", locale)
-    .maybeSingle();
+    .maybeSingle()
 
-  console.log(data);
+  console.log(data)
 
   const { data: postsData } = await supabaseAdmin
     .from("posts")
@@ -59,12 +59,10 @@ export default async function Home({ params }: HomePageProps) {
         slug,
         excerpt
       )
-    `,
+    `
     )
     .order("created_at", { ascending: false })
-    .limit(6);
-
-    */
+    .limit(6)
 
   const rawPosts: RawPost[] = (postsData ?? []) as any;
 
@@ -82,7 +80,7 @@ export default async function Home({ params }: HomePageProps) {
           day: "2-digit",
           month: "short",
           year: "numeric",
-        },
+        }
       );
 
       const readingTimeLabel = p.reading_time
@@ -99,36 +97,41 @@ export default async function Home({ params }: HomePageProps) {
         readingTimeLabel,
         slug: t.slug,
       };
+
+
+
     })
     .filter(Boolean) as {
-    id: string;
-    title: string;
-    excerpt: string;
-    category: string;
-    coverUrl: string | null;
-    dateLabel: string;
-    readingTimeLabel: string;
-    slug: string;
-  }[];
+      id: string;
+      title: string;
+      excerpt: string;
+      category: string;
+      coverUrl: string | null;
+      dateLabel: string;
+      readingTimeLabel: string;
+      slug: string;
+    }[];
+
 
   return (
     <>
-      <Hero
-        content={
-          data || {
-            hero_title: "Hi! I’m Görkem 👋",
-            hero_subtitle:
-              "Full Stack Developer | Content Creator | Web Pentester",
-            hero_caption: "Lorem ipsum dolor...",
-            hero_paragraph1: "Lorem ipsum dolor sit amet...",
-            hero_paragraph2: "Aliquam at leo risus...",
-            hero_paragraph3: "Praesent vitae eros...",
-            hero_cta_label: "Let's work together",
-            hero_cta_url: "/contact",
-          }
-        }
+      <Hero content={data ||
+      {
+        hero_title: "Hi! I’m Görkem 👋",
+        hero_subtitle: "Full Stack Developer | Content Creator | Web Pentester",
+        hero_caption: "Lorem ipsum dolor...",
+        hero_paragraph1: "Lorem ipsum dolor sit amet...",
+        hero_paragraph2: "Aliquam at leo risus...",
+        hero_paragraph3: "Praesent vitae eros...",
+        hero_cta_label: "Let's work together",
+        hero_cta_url: "/contact"
+      }
+      } />
+      <BlogGrid
+        locale={locale}
+        posts={blogPosts}
+        
       />
-      <BlogGrid locale={locale} posts={blogPosts} />
     </>
   );
 }

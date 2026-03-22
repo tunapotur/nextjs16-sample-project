@@ -1,24 +1,25 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+"use client"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card"
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function LoginForm() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
@@ -26,29 +27,31 @@ export default function LoginForm() {
   const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setErr("");
-    setLoading(true);
+      e.preventDefault();
+        setErr("");
+        setLoading(true);
 
-    try {
-      const res = await fetch("/api/admin/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+        try {
+          const res = await fetch("/api/admin/login",{
+            method:"POST",
+            headers:{
+               "Content-Type": "application/json",
 
-      if (res.ok) {
-        router.push("/admin/dashboard");
-      } else {
-        setErr("Wrong Email or Password");
-      }
-    } catch (error) {
-      setErr("Something went wrong");
-    } finally {
-      setLoading(false);
-    }
+            },
+            body:JSON.stringify({email, password}),
+          });
+
+          if(res.ok){
+            router.push("/admin/dashboard")
+          }else{
+            setErr("Wrong Email or Password");
+          }
+          
+        } catch (error) {
+          setErr("Something went wrong");
+        }finally{
+          setLoading(false)
+        }
   }
 
   return (
@@ -73,23 +76,24 @@ export default function LoginForm() {
                       placeholder="m@example.com"
                       required
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e)=>setEmail(e.target.value)}
                     />
                   </Field>
                   <Field>
                     <div className="flex items-center">
                       <FieldLabel htmlFor="password">Password</FieldLabel>
+                   
                     </div>
-                    <Input
-                      id="password"
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
+                    <Input 
+                    id="password" 
+                    type="password" 
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    required />
                   </Field>
                   <Field>
                     <Button type="submit">Login</Button>
+                 
                   </Field>
                 </FieldGroup>
               </form>
@@ -98,5 +102,5 @@ export default function LoginForm() {
         </div>
       </div>
     </div>
-  );
+  )
 }

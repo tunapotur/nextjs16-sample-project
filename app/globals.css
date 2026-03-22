@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-mycolor1: var(--mycolor1);
+    --color-mycolor1: var(--mycolor1);
   --color-mycolor2: var(--mycolor2);
 
   --color-background: var(--background);
@@ -84,7 +84,7 @@
 }
 
 .dark {
-  --mycolor1: #050b1f; /* dark bg */
+   --mycolor1: #050b1f; /* dark bg */
   --mycolor2: #f8fafc; /* dark text */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

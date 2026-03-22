@@ -17,7 +17,7 @@ https://github.com/efegorkemumit/blog-multi-lang-nextjs16
 01:58:55 Login API \
 02:13:32 Logout & Admin Header \ https://youtu.be/SgTWxqg2kJ0?si=43GRVbgT0gUFRH83&t=8016
 02:30:22 About Backend and Frontend \
-03:04:25 Get Post \
+03:04:25 Get Post \ https://youtu.be/SgTWxqg2kJ0?si=Ch1QAs0Zcg3Gjmlf&t=11065
 03:21:41 Create New Post \
 03:35:00 Bug Fix \
 03:42:38 Post Insert \
