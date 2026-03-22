@@ -1,4 +1,4 @@
-import "server-only"; // Sadece server'da çalış komutu
+import "server-only";
 import type { Locale } from "@/i18n";
 
 const dictionaries = {

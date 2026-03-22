@@ -15,7 +15,7 @@ https://github.com/efegorkemumit/blog-multi-lang-nextjs16
 01:37:35 Supabase Bağlantı Ayarları ve Modeller \
 01:50:47 Login Design & Admin Auth \
 01:58:55 Login API \
-02:13:32 Logout & Admin Header \
+02:13:32 Logout & Admin Header \ https://youtu.be/SgTWxqg2kJ0?si=43GRVbgT0gUFRH83&t=8016
 02:30:22 About Backend and Frontend \
 03:04:25 Get Post \
 03:21:41 Create New Post \
@@ -24,6 +24,8 @@ https://github.com/efegorkemumit/blog-multi-lang-nextjs16
 03:56:53 Update Post \
 04:14:01 Delete Post \
 04:22:28 Anasayfa Select \
+
+https://bcrypt-generator.com/
 
 First, run the development server:
 

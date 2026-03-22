@@ -9,6 +9,10 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname.startsWith("/admin")) {
+    return NextResponse.next();
+  }
+
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||

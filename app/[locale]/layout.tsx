@@ -20,7 +20,7 @@ const LocaleLayout = async ({ children, params }: LayoutProps) => {
   return (
     <div>
       <SiteHeader dict={dict} locale={locale} />
-      {children}
+      <div className="min-h-screen">{children}</div>
       <SiteFooter dict={dict} locale={locale} />
     </div>
   );
